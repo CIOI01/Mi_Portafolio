@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Cyberpunk</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="shutter-container">
+    <div class="shutter top-shutter"></div>
+    <div class="loading-text">ACCESO_CONCEDIDO</div>
+    <div class="shutter bottom-shutter"></div>
+  </div>
+
+  
+    <div class="scanlines"></div>
+
+    <header>
+        <nav class="container">
+            <div class="logo">C:\Users\Cristobal\Desktop\Portafolio</div>
+            <ul class="nav-links">
+                <li><a href="about.html">/Sobre_mí</a></li>
+                <li><a href="#projects">/Proyectos</a></li>
+                <li><a href="contact.html">/Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="container">
+        <p class="subtitle terminal-text">> Inicializando portafolio...</p>
+        <h1>Hola, soy <span class="highlight glitch-text" data-text="Tu Nombre">Cristobal Oyaneder</span>.</h1>
+        <p class="description">Desarrollador trainee con enfoque en Python.</p>
+        <a href="#projects" class="btn btn-neon">Explorar Proyectos_↓</a>
+    </section>
+
+    <section id="projects" class="container">
+        <h2 class="section-title">LOGS DE PROYECTOS >></h2>
+        <div class="grid">
+            <article class="card cyber-card">
+                <div class="card-content">
+                    <h3>Gestion_Biblioteca</h3>
+                    <p>Sistema de gestion de biblioteca para administrar usuarios, libros y prestamos, hecho en Python.</p>
+                    <a href="https://github.com/CIOI01/Sistema-de-Gestion-de-Biblioteca.git" class="link-cyber">Acceder Datos &rarr;</a>
+                </div>
+            </article>
+
+            <article class="card cyber-card">
+                <div class="card-content">
+                    <h3>Scraper_Dolar</h3>
+                    <p>Script de deteccion de valores del dólar en tiempo real, con mensaje a Email.</p>
+                    <a href="https://github.com/CIOI01/Scraper-Dolar" class="link-cyber">Acceder Datos &rarr;</a>
+                </div>
+            </article>
+
+            <article class="card cyber-card">
+                <div class="card-content">
+                    <h3>Bot de Discord_Python</h3>
+                    <p>Bot de la plataforma "Discord" hecho en Python.</p>
+                    <a href="https://github.com/CIOI01/Bot-de-Discord_Python.git" class="link-cyber">Acceder Datos &rarr;</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="contact" class="container cyber-footer">
+        <h2>CONEXIÓN_ESTABLECIDA >></h2>
+        <p>Medios de contacto por este aqui!</p>
+        <a href="contact.html" class="btn btn-neon-outline">CONTACTO</a>
+        
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/cristobal-oyaneder/">[LINKEDIN]</a>
+            <a href="https://github.com/CIOI01">[GITHUB]</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>©2025 Cristobal_Oyaneder. Sistema Online. Versión 2.0.77</p>
+    </footer>
+ 
+
+   <div class="music-player">
+    <div id="youtube-player"></div> 
+    
+    <button id="music-toggle" class="music-btn">
+        <div class="equalizer">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <span class="music-text">INICIANDO...</span>
+    </button>
+  </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
