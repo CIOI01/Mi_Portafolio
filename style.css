@@ -573,6 +573,37 @@ footer {
         max-width: 100%;         
     }
 
+    .contact-section h1 {
+        font-size: 1.4rem;       
+        overflow-wrap: break-word; 
+        word-break: break-word;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    
+    .contact-section {
+        padding: 0 10px;         
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;      
+    }
+
+    
+    .cyber-terminal-box {
+        padding: 20px 15px;      
+        width: 100%;             
+        box-sizing: border-box;  
+    }
+
+    
+    .big-btn {
+        font-size: 0.9rem;       
+        padding: 15px 5px;       
+        width: 100%;             
+        white-space: nowrap;     
+    }
+
 }
 
 
