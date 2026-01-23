@@ -12,9 +12,20 @@
     --spacing: 80px;
 }
 
-html {
+
+html, body {
+    width: 100%;             
+    max-width: 100%;         
+    overflow-x: hidden;      
+    margin: 0;               
+    padding: 0;
+    
+    
     scroll-behavior: smooth;
-    scroll-padding-top: 100px; 
+    scroll-padding-top: 100px;
+    
+    
+    background-color: var(--bg-dark); 
 }
 
 
@@ -354,12 +365,9 @@ footer {
     background-color: #020408;
 }
 
-/* Móvil */
-@media (max-width: 768px) {
-    h1 { font-size: 2.2rem; }
-    .nav-links { display: none; }
-    .cyber-card { clip-path: none; /* Simplificar en móvil */ }
-}
+/* =========================================
+   ESTILOS ESPECÍFICOS PARA ABOUT.HTML
+   ========================================= */
 
 /* Estructura de dos columnas para foto y bio */
 .about-grid {
@@ -491,14 +499,80 @@ footer {
         grid-template-columns: 1fr; /* Una sola columna en celular */
         text-align: center;
     }
+
+    .logo {
+        font-size: 0.75rem;       /* Reducir tamaño del logo */
+        max-width: 70%;           /* Limitar ancho */
+        white-space: nowrap;      /* Forzar en una sola línea */
+        overflow: hidden;         /* Ocultar desbordamiento */
+        text-overflow: ellipsis;  /* Poner "..." si es muy largo */
+    }
     
     .stats-box {
         justify-content: center;
     }
-    
-    .timeline {
-        margin-left: 0;
+    /* Ajustes para la línea de tiempo */
+    .timeline { 
+        margin-left: 0; /* Quitar margen izquierdo */
     }
+
+    nav {
+        padding: 10px 0; /* Un poco menos de altura en móvil */
+    }
+
+    .section-title {
+        font-size: 1.1rem;         /* Letra más pequeña */
+        overflow-wrap: break-word; /* Romper si es muy larga */
+        word-break: break-word;
+        hyphens: auto;
+    }
+
+    h1, h2, h3 {
+        overflow-wrap: break-word;
+    }
+
+    .bio-text {
+        text-align: left;      
+        padding: 0 5px;        
+    }
+
+    .bio-text p {
+        font-size: 0.95rem;    
+        line-height: 1.6;      
+        margin-bottom: 20px;   
+    }
+    
+    
+    .bio-text h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        text-align: center;    
+    }
+
+    
+    .bio-text {
+        width: 100%;             
+        box-sizing: border-box;  
+        padding: 0 10px;         
+        overflow: hidden;       
+    }
+
+    
+    .bio-text h1 {
+        font-size: 1.6rem;       
+        word-wrap: break-word;   
+        line-height: 1.2;        
+        margin-bottom: 20px;
+    }
+
+    
+    .bio-text p {
+        font-size: 0.95rem;      
+        text-align: left;        
+        line-height: 1.6;        
+        max-width: 100%;         
+    }
+
 }
 
 
@@ -721,24 +795,6 @@ footer {
 .bar:nth-child(3) { animation-delay: 0.0s; }
 .bar:nth-child(4) { animation-delay: 0.2s; }
 
-/* AJUSTE MÓVIL (Para que no tape contenido en celulares) */
-@media (max-width: 768px) {
-    .music-player {
-        bottom: 15px;
-        left: 15px;
-    }
-    .music-btn {
-        max-width: 200px;
-        padding: 0 15px;
-    }
-    .music-text {
-        max-width: 100px; /* Texto más corto en celular */
-        font-size: 0.65rem;
-    }
-}
-
-
-/* Corrección de layout para que el footer se empuje hacia abajo */
 
 /* Asegura que el footer esté al final de la página incluso con poco contenido */
 #app-content {
@@ -751,3 +807,73 @@ footer {
 footer {
     margin-top: auto !important; 
     width: 100%; }
+
+    
+
+  /* --- INICIO DEL CÓDIGO MÓVIL  --- */
+
+/* Estilos del Botón Hamburguesa */
+.menu-toggle {
+    display: none; /* Oculto por defecto */
+    background: transparent;
+    border: 1px solid var(--neon-cyan);
+    cursor: pointer;
+    padding: 10px;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 200;
+}
+
+.menu-toggle .bar {
+    width: 25px;  
+    height: 3px;
+    background-color: var(--neon-cyan);
+    transition: 0.3s;
+}
+
+/* Efecto al abrir menú (La X) */
+.menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); background: var(--neon-pink); }
+.menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+.menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background: var(--neon-pink); }
+
+/* --- RESPONSIVE (Solo para pantallas menores a 768px) --- */
+@media (max-width: 768px) {
+    
+    /* Mostrar el botón solo en móvil */
+    .menu-toggle { display: flex; }
+
+    /* Transformar la lista de links en un menú vertical */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(5, 10, 20, 0.95); /* Fondo oscuro casi negro */
+        border-bottom: 2px solid var(--neon-pink);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 20px;
+        
+        /* Oculto por defecto */
+        display: none; 
+    }
+
+    /* Clase mágica que JS activará para mostrar el menú */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Ajustes para que el resto de la página se vea bien en celular */
+    .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 2rem; }
+    .music-text { display: none; } /* Ocultar texto música para ahorrar espacio */
+}  
